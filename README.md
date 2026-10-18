@@ -60,11 +60,26 @@ nutzt die Markenschrift Manrope/Inter.
 
 ## Abschnitte der Startseite
 
-Header (Sticky) · Hero · Leistungen (3 Karten) · Über uns · Warum wir (4 Vorteile) ·
-Ablauf (4 Schritte) · Einsatzgebiet (50-km-Radius) · Kontakt (CTA + Formular) · Footer.
+Header (Sticky) · Hero (mehrschichtige Bildkomposition) · Über uns · Leistungen
+(3 Karten) · Warum wir (dunkle Sektion, 4 Vorteile) · Ablauf (4 Schritte) ·
+Einsatzgebiet (50-km-Radius) · FAQ (Akkordeon) · Kontakt (Kontaktdaten + Formular) · Footer.
 
-Alle Navigationspunkte und CTA-Buttons scrollen per Smooth-Scroll zu den
+Alle Navigationspunkte und CTA-Buttons scrollen per Smooth-Scroll (Lenis) zu den
 entsprechenden Abschnitten derselben Seite. Es gibt keine toten Links.
+
+## Animation / Technik
+
+- GSAP + ScrollTrigger (lokal unter `js/vendor/`) für Scroll-Reveals, Hero-Einstieg,
+  Parallax und Count-up-Statistiken; Lenis für weiches Scrollen.
+- Vollständige Degradation: ohne die Libraries bzw. bei `prefers-reduced-motion`
+  bleiben alle Inhalte sichtbar und nutzbar.
+- Markenfarbe durchgehend als **flaches** `#4A703A` (keine Grün-Verläufe).
+
+## Live-Vorschau (GitHub Pages)
+
+Die Seite wird über `.github/workflows/deploy-pages.yml` bei **jedem Push auf `main`**
+automatisch zu GitHub Pages veröffentlicht – die Vorschau-URL spiegelt also immer den
+aktuellen Stand wider: `https://shahzadishq.github.io/tankservice/`
 
 ## Inhalte
 
