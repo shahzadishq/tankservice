@@ -21,11 +21,9 @@
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <!-- Decorative page background -->
   <div class="bg-fx" aria-hidden="true">
     <span class="bg-blob bg-blob-1"></span>
     <span class="bg-blob bg-blob-2"></span>
-    <span class="bg-grain"></span>
   </div>
 
   <!-- ============ HEADER ============ -->
@@ -42,9 +40,10 @@
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#startseite">Startseite</a></li>
-          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -62,10 +61,11 @@
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
       <ul>
         <li><a href="#startseite">Startseite</a></li>
-        <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#einsatzgebiet">Einsatzgebiet</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
       <a class="btn btn-primary btn-block" href="#kontakt">Jetzt Anfrage stellen</a>
@@ -75,14 +75,14 @@
   <main id="inhalt">
     <!-- ============ HERO ============ -->
     <section class="hero" id="startseite">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="container hero-grid">
+      <span class="hero-dots" aria-hidden="true"></span>
+      <div class="container hero-inner">
         <div class="hero-copy">
           <p class="eyebrow hero-eyebrow" data-hero="1"><span class="eyebrow-dot" aria-hidden="true"></span>Fachbetrieb für Heizöltanks · seit 2009</p>
           <h1 class="hero-title">
             <span class="line" data-hero="2">Ihr Partner für</span>
-            <span class="line" data-hero="3"><span class="grad">Heizöltank-Ausbau</span></span>
-            <span class="line" data-hero="4">und fachgerechte Entsorgung</span>
+            <span class="line" data-hero="3">Heizöltank-Ausbau</span>
+            <span class="line" data-hero="4">und <span class="ul">fachgerechte Entsorgung</span></span>
           </h1>
           <p class="lead" data-hero="5">Von der Planung bis zum Ausbau – wir unterstützen Sie bei Ihrem Tankprojekt mit persönlicher Beratung und einer professionellen, sauberen Umsetzung.</p>
           <div class="hero-actions" data-hero="6">
@@ -92,33 +92,48 @@
             </a>
             <a class="btn btn-ghost btn-lg" href="#leistungen">Unsere Leistungen entdecken</a>
           </div>
-          <ul class="hero-trust" data-hero="7">
-            <li><span class="trust-check" aria-hidden="true">✓</span> Zertifiziert nach § 62 AwSV</li>
-            <li><span class="trust-check" aria-hidden="true">✓</span> Familienbetrieb aus der Pfalz</li>
-            <li><span class="trust-check" aria-hidden="true">✓</span> Transparente Kosten</li>
-          </ul>
+          <dl class="hero-stats" data-hero="7">
+            <div class="hero-stat">
+              <dt><span class="count" data-count="2009" data-plain="1">0</span></dt>
+              <dd>Fachbetrieb seit</dd>
+            </div>
+            <div class="hero-stat">
+              <dt>§&nbsp;62</dt>
+              <dd>AwSV zertifiziert</dd>
+            </div>
+            <div class="hero-stat">
+              <dt><span class="count" data-count="50">0</span>&nbsp;km</dt>
+              <dd>Einsatzradius</dd>
+            </div>
+          </dl>
         </div>
 
         <div class="hero-media" data-hero="8">
-          <div class="hero-image-wrap" data-parallax="0.12">
+          <div class="hero-photo hero-photo-main" data-parallax="0.08">
             <img src="assets/images/hero-tankausbau.jpg"
                  alt="Fachgerechter Ausbau eines Heizöltanks aus Stahl in einem Kellerraum mit vorbereitetem Werkzeug"
                  width="1680" height="1050" loading="eager" fetchpriority="high" />
           </div>
-          <div class="hero-badge" data-parallax="-0.18">
-            <span class="hero-badge-num"><span class="count" data-count="50">0</span>&nbsp;km</span>
-            <span class="hero-badge-label">Einsatzgebiet rund um<br />Landau in der Pfalz</span>
+          <div class="hero-photo hero-photo-sub" data-parallax="-0.12">
+            <img src="assets/images/ueber-uns.jpg"
+                 alt="Heizöltank aus Kunststoff im Kellerraum, bereit für den Ausbau"
+                 width="1120" height="1000" loading="lazy" />
           </div>
-          <div class="hero-badge hero-badge-2" data-parallax="0.2">
-            <span class="hero-badge-year">seit <span class="count" data-count="2009" data-plain="1">0</span></span>
-            <span class="hero-badge-label">zertifizierter Fachbetrieb</span>
+          <div class="hero-promise" data-parallax="-0.05">
+            <span class="hero-promise-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg>
+            </span>
+            <span class="hero-promise-text"><strong>Festpreis &amp; Entsorgungsnachweis</strong><br />ohne versteckte Kosten</span>
+          </div>
+          <div class="hero-seal" aria-hidden="true">
+            <span class="hero-seal-top">§ 62</span>
+            <span class="hero-seal-mid">AwSV</span>
+            <span class="hero-seal-bot">zertifiziert</span>
           </div>
         </div>
       </div>
 
-      <a class="scroll-cue" href="#leistungen" aria-label="Nach unten scrollen">
-        <span class="scroll-cue-dot"></span>
-      </a>
+      <a class="scroll-cue" href="#ueber-uns" aria-label="Nach unten scrollen"><span class="scroll-cue-dot"></span></a>
     </section>
 
     <!-- ============ MARQUEE ============ -->
@@ -140,6 +155,34 @@
         <span>50 km um Landau</span><span class="sep">◆</span>
       </div>
     </div>
+
+    <!-- ============ ÜBER UNS ============ -->
+    <section class="section section-about" id="ueber-uns">
+      <div class="container about-grid">
+        <div class="about-media" data-reveal>
+          <div class="about-image-wrap" data-parallax="0.1">
+            <img src="assets/images/ueber-uns.jpg" alt="Heizöltank aus Kunststoff in einem Kellerraum, bereit für den Ausbau durch Paul Demand Tankservice" width="1120" height="1000" loading="lazy" />
+          </div>
+          <div class="about-stat" data-parallax="-0.14">
+            <span class="about-stat-num">seit&nbsp;<span class="count" data-count="2009" data-plain="1">0</span></span>
+            <span class="about-stat-label">zertifizierter Fachbetrieb</span>
+          </div>
+        </div>
+
+        <div class="about-copy" data-reveal>
+          <p class="eyebrow">Über uns</p>
+          <h2>Ihr zuverlässiger Partner rund um den Tankausbau</h2>
+          <p>Wir sind seit 2009 Fachbetrieb und nach § 62 AwSV zertifiziert. Durch unsere langjährige Erfahrung sind wir der richtige Ansprechpartner für Ihren Auftrag. Seit 2022 führe ich den Familienbetrieb weiter.</p>
+          <p>Ob komplette Heizungsanlagen, Heizöltanks, Weintanks oder Wassertanks – wir planen Ihren individuellen Auftrag und garantieren eine zeitnahe und fachgerechte Ausführung. Unser besonderes Augenmerk liegt dabei auf der Vermeidung von Spuren und Schäden.</p>
+          <ul class="about-list">
+            <li><span aria-hidden="true">✓</span> Zertifizierung nach § 62 AwSV</li>
+            <li><span aria-hidden="true">✓</span> Familienbetrieb in zweiter Hand seit 2022</li>
+            <li><span aria-hidden="true">✓</span> Erfahrung mit Heizöl-, Wein- und Wassertanks sowie kompletten Heizungsanlagen</li>
+            <li><span aria-hidden="true">✓</span> Persönliche Beratung direkt vor Ort</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ LEISTUNGEN ============ -->
     <section class="section section-leistungen" id="leistungen">
@@ -196,40 +239,14 @@
       </div>
     </section>
 
-    <!-- ============ ÜBER UNS ============ -->
-    <section class="section section-about" id="ueber-uns">
-      <div class="container about-grid">
-        <div class="about-media" data-reveal>
-          <div class="about-image-wrap" data-parallax="0.1">
-            <img src="assets/images/ueber-uns.jpg" alt="Heizöltank aus Kunststoff in einem Kellerraum, bereit für den Ausbau durch Paul Demand Tankservice" width="1120" height="1000" loading="lazy" />
-          </div>
-          <div class="about-stat" data-parallax="-0.14">
-            <span class="about-stat-num">seit&nbsp;<span class="count" data-count="2009" data-plain="1">0</span></span>
-            <span class="about-stat-label">zertifizierter Fachbetrieb</span>
-          </div>
-        </div>
-
-        <div class="about-copy" data-reveal>
-          <p class="eyebrow">Über uns</p>
-          <h2>Ihr zuverlässiger Partner rund um den Tankausbau</h2>
-          <p>Wir sind seit 2009 Fachbetrieb und nach § 62 AwSV zertifiziert. Durch unsere langjährige Erfahrung sind wir der richtige Ansprechpartner für Ihren Auftrag. Seit 2022 führe ich den Familienbetrieb weiter.</p>
-          <p>Ob komplette Heizungsanlagen, Heizöltanks, Weintanks oder Wassertanks – wir planen Ihren individuellen Auftrag und garantieren eine zeitnahe und fachgerechte Ausführung. Unser besonderes Augenmerk liegt dabei auf der Vermeidung von Spuren und Schäden.</p>
-          <ul class="about-list">
-            <li><span aria-hidden="true">✓</span> Zertifizierung nach § 62 AwSV</li>
-            <li><span aria-hidden="true">✓</span> Familienbetrieb in zweiter Hand seit 2022</li>
-            <li><span aria-hidden="true">✓</span> Erfahrung mit Heizöl-, Wein- und Wassertanks sowie kompletten Heizungsanlagen</li>
-            <li><span aria-hidden="true">✓</span> Persönliche Beratung direkt vor Ort</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WARUM WIR ============ -->
+    <!-- ============ WARUM WIR (dark) ============ -->
     <section class="section section-why" id="vorteile">
+      <span class="why-glow" aria-hidden="true"></span>
       <div class="container">
         <header class="section-head" data-reveal>
           <p class="eyebrow">Warum Paul Demand Tankservice?</p>
           <h2>Worauf Sie sich bei uns verlassen können</h2>
+          <p class="section-intro">Vier Dinge, die Sie bei uns immer bekommen – von der ersten Anfrage bis zur Übergabe.</p>
         </header>
 
         <div class="cards cards-4 benefits" data-reveal-group>
@@ -327,6 +344,45 @@
             <span class="radius-label">Landau i. d. Pfalz</span>
             <span class="radius-badge">Umkreis 50&nbsp;km</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-head" data-reveal>
+          <p class="eyebrow">Häufige Fragen</p>
+          <h2>Gut zu wissen vor Ihrem Tankausbau</h2>
+          <p class="section-intro">Die wichtigsten Fragen rund um Ablauf, Kosten und Entsorgung – kurz beantwortet. Ihre Frage ist nicht dabei? Schreiben Sie uns einfach.</p>
+          <a class="btn btn-ghost" href="#kontakt">Frage stellen</a>
+        </div>
+
+        <div class="faq-list" data-reveal>
+          <details class="faq-item">
+            <summary>Was kostet der Ausbau eines Heizöltanks?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Die Kosten hängen von Art, Größe und Zugänglichkeit Ihres Tanks ab. Nach einem unverbindlichen Vor-Ort-Termin erhalten Sie ein transparentes Angebot – alle Kosten und mögliche Zusatzkosten werden vorab mit Ihnen abgesprochen. Versteckte Kosten gibt es bei uns nicht.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Welche Tanks bauen Sie aus?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Wir arbeiten mit Heizöltanks aus Stahl und Kunststoff, mit Wein- und Wassertanks sowie mit kompletten Heizungsanlagen. Auch enge Kellerräume und schwer zugängliche Anlagen sind kein Problem – bei Bedarf zerlegen wir den Tank passgenau vor Ort.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Muss der Tank vor dem Ausbau leer sein?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Nicht zwingend. Zum Ausbau gehören auch die fachgerechte Entnahme von Restöl und die Reinigung des Tanks. Wir kümmern uns um den gesamten Ablauf, damit für Sie kein Aufwand bleibt.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Erhalte ich einen Nachweis über die Entsorgung?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Ja. Nach Abschluss der Arbeiten erhalten Sie Ihre vereinbarte Rechnung sowie den dazugehörigen Entsorgungsnachweis für Ihre Unterlagen.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>In welchem Gebiet sind Sie tätig?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Unser Einsatzgebiet umfasst einen Umkreis von rund 50&nbsp;km um Landau in der Pfalz. Ob Ihr Standort dazugehört, sagen wir Ihnen gern auf Anfrage.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Wie läuft die Zusammenarbeit ab?<span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>In vier Schritten: Sie stellen eine Anfrage, wir vereinbaren einen Vor-Ort-Termin, Sie erhalten ein individuelles Angebot und wir führen den Ausbau fachgerecht durch – sauber und mit besonderem Augenmerk auf die Vermeidung von Spuren und Schäden.</p></div>
+          </details>
         </div>
       </div>
     </section>
@@ -434,9 +490,10 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="#startseite">Startseite</a></li>
-          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>

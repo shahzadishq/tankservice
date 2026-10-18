@@ -105,6 +105,7 @@
     var plain = el.getAttribute("data-plain") === "1"; // no thousands grouping (e.g. years)
     var start = null, dur = 1400;
     function fmt(n) { return plain ? String(n) : n.toLocaleString("de-DE"); }
+    if (reduceMotion) { el.textContent = fmt(target); return; }
     function tick(ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / dur, 1);
@@ -189,6 +190,60 @@
         var plain = el.getAttribute("data-plain") === "1";
         var t = parseInt(el.getAttribute("data-count"), 10) || 0;
         el.textContent = plain ? String(t) : t.toLocaleString("de-DE");
+      });
+    }
+  }
+
+  /* ---------- FAQ accordion (smooth, single-open) ---------- */
+  var faqItems = Array.prototype.slice.call(doc.querySelectorAll(".faq-item"));
+  if (faqItems.length) {
+    faqItems.forEach(function (item) {
+      var summary = item.querySelector("summary");
+      var panel = item.querySelector(".faq-a");
+      if (!summary || !panel) return;
+
+      summary.addEventListener("click", function (e) {
+        e.preventDefault();
+        var isOpen = item.hasAttribute("open");
+
+        if (isOpen) {
+          collapse(item, panel);
+        } else {
+          // close others
+          faqItems.forEach(function (other) {
+            if (other !== item && other.hasAttribute("open")) collapse(other, other.querySelector(".faq-a"));
+          });
+          expand(item, panel);
+        }
+      });
+    });
+
+    function expand(item, panel) {
+      item.setAttribute("open", "");
+      if (reduceMotion) return;
+      var h = panel.scrollHeight;
+      panel.style.height = "0px";
+      panel.style.opacity = "0";
+      requestAnimationFrame(function () {
+        panel.style.transition = "height 0.34s var(--ease), opacity 0.34s var(--ease)";
+        panel.style.height = h + "px";
+        panel.style.opacity = "1";
+      });
+      panel.addEventListener("transitionend", function te() {
+        panel.style.height = ""; panel.style.transition = ""; panel.style.opacity = "";
+        panel.removeEventListener("transitionend", te);
+      });
+    }
+    function collapse(item, panel) {
+      if (reduceMotion || !panel) { item.removeAttribute("open"); return; }
+      var h = panel.scrollHeight;
+      panel.style.height = h + "px"; panel.style.opacity = "1";
+      panel.style.transition = "height 0.3s var(--ease), opacity 0.3s var(--ease)";
+      requestAnimationFrame(function () { panel.style.height = "0px"; panel.style.opacity = "0"; });
+      panel.addEventListener("transitionend", function te() {
+        item.removeAttribute("open");
+        panel.style.height = ""; panel.style.transition = ""; panel.style.opacity = "";
+        panel.removeEventListener("transitionend", te);
       });
     }
   }
