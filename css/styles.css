@@ -75,7 +75,7 @@ html.lenis, html.lenis body { height: auto; }
 
 h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1.12; color: var(--anthracite); letter-spacing: -0.015em; }
 h1 { font-size: clamp(2.15rem, 4.6vw, 3.35rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 800; }
 h3 { font-size: 1.22rem; font-weight: 600; }
 h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; }
 p { color: var(--text-muted); }
@@ -144,19 +144,19 @@ p { color: var(--text-muted); }
 .mobile-nav a.btn-primary { color: #fff; }
 .mobile-nav a.btn-primary:hover, .mobile-nav a.btn-primary:focus-visible { color: #fff; }
 
-/* HERO (full-bg scene) */
-.hero { position: relative; overflow: hidden; }
-.hero-bg { background-color: #e9ece6; background-image: url("../assets/images/hero-bg.jpg"); background-size: cover; background-position: 72% center; background-repeat: no-repeat; }
+/* HERO (full-bg scene, above the fold) */
+.hero { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - var(--header-h)); }
+.hero-bg { background-color: #e9ece6; background-image: url("../assets/images/hero-bg.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; }
 .hero-scrim { position: absolute; inset: 0; z-index: 0; background:
   linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.94) 32%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.08) 72%, rgba(255,255,255,0) 86%),
   linear-gradient(0deg, rgba(255,255,255,0.85), rgba(255,255,255,0) 32%); }
-.hero-inner { position: relative; z-index: 1; padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.hero-inner { position: relative; z-index: 1; padding-top: clamp(1.4rem, 3vw, 2.4rem); padding-bottom: clamp(1rem, 2vw, 1.4rem); }
 .hero-copy { max-width: 37rem; }
-.hero-title { font-size: clamp(2.2rem, 4.9vw, 3.7rem); margin: 0.5rem 0 1.2rem; }
+.hero-title { font-size: clamp(2.1rem, 4.4vw, 3.4rem); margin: 0.4rem 0 1rem; }
 .hero-title .grn { color: var(--green); }
-.hero .lead { max-width: 34rem; margin-bottom: 2rem; color: #3e433e; }
+.hero .lead { max-width: 34rem; margin-bottom: 1.6rem; color: #3e433e; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
-.hero-features { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.8rem, 1.4vw, 1.1rem); padding-bottom: clamp(2rem, 5vw, 4rem); }
+.hero-features { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.8rem, 1.4vw, 1.1rem); padding-bottom: clamp(1.2rem, 2.5vw, 2rem); }
 .hero-feature { display: flex; align-items: center; gap: 0.85rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--radius); padding: 1rem 1.05rem; box-shadow: var(--shadow-md); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
 .hero-feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .hf-ic { display: inline-grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: var(--radius); background: var(--green-050); color: var(--green); }
@@ -177,8 +177,8 @@ p { color: var(--text-muted); }
 .about-media { position: relative; aspect-ratio: 1 / 0.9; }
 .about-figure { position: absolute; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--grey-100); will-change: transform; }
 .about-figure img { width: 100%; height: 100%; object-fit: cover; }
-.about-figure-main { top: 0; left: 0; width: 64%; height: 66%; }
-.about-figure-sub { right: 0; bottom: 0; width: 62%; height: 62%; border: 6px solid #fff; }
+.about-figure-main { top: 0; left: 0; width: 88%; height: 89%; }
+.about-figure-sub { right: 0; bottom: 0; width: 62%; height: 62%; border: solid #fff; border-width: 30px 0px 0px 30px; }
 .about-badge { position: absolute; top: 3%; right: 0; z-index: 3; display: inline-flex; align-items: center; gap: 0.7rem; background: var(--anthracite); color: #fff; border-radius: var(--radius); padding: 0.85rem 1.2rem; box-shadow: var(--shadow-lg); }
 .about-badge-num { font-family: var(--font-head); font-weight: 800; font-size: 2.3rem; line-height: 1; color: var(--green); }
 .about-badge-plus { color: var(--green); }
