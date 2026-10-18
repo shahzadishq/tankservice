@@ -1,0 +1,17 @@
+<svg width="128" height="112" viewBox="0 0 128 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paul Demand Tankservice Logo">
+  <rect x="90" y="18" width="9" height="28" rx="2" fill="#E6E9E4"/>
+  <path d="M64 10 L16 49" stroke="#7CA765" stroke-width="9" stroke-linecap="round"/>
+  <path d="M64 10 L112 49" stroke="#E6E9E4" stroke-width="9" stroke-linecap="round"/>
+  <path d="M18 54 L18 86" stroke="#7CA765" stroke-width="7" stroke-linecap="round"/>
+  <path d="M110 54 L110 86" stroke="#E6E9E4" stroke-width="7" stroke-linecap="round"/>
+  <rect x="42" y="80" width="7" height="8" rx="1.5" fill="#E6E9E4"/>
+  <rect x="79" y="80" width="7" height="8" rx="1.5" fill="#E6E9E4"/>
+  <rect x="58" y="40" width="12" height="8" rx="2" fill="#E6E9E4"/>
+  <ellipse cx="64" cy="40" rx="8" ry="3.4" fill="#E6E9E4"/>
+  <rect x="30" y="48" width="68" height="34" rx="17" fill="#E6E9E4"/>
+  <ellipse cx="40" cy="65" rx="6.5" ry="15.5" fill="#D2D7CE"/>
+  <line x1="55" y1="51" x2="55" y2="79" stroke="#AEB5AC" stroke-width="2.4" stroke-linecap="round"/>
+  <line x1="74" y1="51" x2="74" y2="79" stroke="#AEB5AC" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M98 55 C84 61 81 80 93 92 C107 85 110 64 98 55 Z" fill="#7CA765"/>
+  <path d="M95 62 C93 72 94 82 93 90" stroke="#2E3230" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
