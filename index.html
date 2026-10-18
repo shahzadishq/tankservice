@@ -39,9 +39,9 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#startseite">Startseite</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#projekte">Projekte</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -63,6 +63,7 @@
         <li><a href="#startseite">Startseite</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#projekte">Projekte</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#einsatzgebiet">Einsatzgebiet</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -93,36 +94,21 @@
             <a class="btn btn-ghost btn-lg" href="#leistungen">Unsere Leistungen entdecken</a>
           </div>
           <dl class="hero-stats" data-hero="7">
-            <div class="hero-stat">
-              <dt><span class="count" data-count="2009" data-plain="1">0</span></dt>
-              <dd>Fachbetrieb seit</dd>
-            </div>
-            <div class="hero-stat">
-              <dt>§&nbsp;62</dt>
-              <dd>AwSV zertifiziert</dd>
-            </div>
-            <div class="hero-stat">
-              <dt><span class="count" data-count="50">0</span>&nbsp;km</dt>
-              <dd>Einsatzradius</dd>
-            </div>
+            <div class="hero-stat"><dt><span class="count" data-count="2009" data-plain="1">0</span></dt><dd>Fachbetrieb seit</dd></div>
+            <div class="hero-stat"><dt>§&nbsp;62</dt><dd>AwSV zertifiziert</dd></div>
+            <div class="hero-stat"><dt><span class="count" data-count="50">0</span>&nbsp;km</dt><dd>Einsatzradius</dd></div>
           </dl>
         </div>
 
         <div class="hero-media" data-hero="8">
           <div class="hero-photo hero-photo-main" data-parallax="0.08">
-            <img src="assets/images/hero-tankausbau.jpg"
-                 alt="Fachgerechter Ausbau eines Heizöltanks aus Stahl in einem Kellerraum mit vorbereitetem Werkzeug"
-                 width="1680" height="1050" loading="eager" fetchpriority="high" />
+            <img src="assets/images/hero-tankausbau.jpg" alt="Fachgerechter Ausbau eines Heizöltanks aus Stahl in einem Kellerraum mit vorbereitetem Werkzeug" width="1680" height="1050" loading="eager" fetchpriority="high" />
           </div>
           <div class="hero-photo hero-photo-sub" data-parallax="-0.12">
-            <img src="assets/images/ueber-uns.jpg"
-                 alt="Heizöltank aus Kunststoff im Kellerraum, bereit für den Ausbau"
-                 width="1120" height="1000" loading="lazy" />
+            <img src="assets/images/ueber-uns.jpg" alt="Heizöltank aus Kunststoff im Kellerraum, bereit für den Ausbau" width="1120" height="1000" loading="lazy" />
           </div>
           <div class="hero-promise" data-parallax="-0.05">
-            <span class="hero-promise-check" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg>
-            </span>
+            <span class="hero-promise-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span>
             <span class="hero-promise-text"><strong>Festpreis &amp; Entsorgungsnachweis</strong><br />ohne versteckte Kosten</span>
           </div>
           <div class="hero-seal" aria-hidden="true">
@@ -132,7 +118,6 @@
           </div>
         </div>
       </div>
-
       <a class="scroll-cue" href="#ueber-uns" aria-label="Nach unten scrollen"><span class="scroll-cue-dot"></span></a>
     </section>
 
@@ -160,12 +145,15 @@
     <section class="section section-about" id="ueber-uns">
       <div class="container about-grid">
         <div class="about-media" data-reveal>
-          <div class="about-image-wrap" data-parallax="0.1">
+          <div class="about-figure about-figure-main" data-parallax="0.07">
             <img src="assets/images/ueber-uns.jpg" alt="Heizöltank aus Kunststoff in einem Kellerraum, bereit für den Ausbau durch Paul Demand Tankservice" width="1120" height="1000" loading="lazy" />
           </div>
-          <div class="about-stat" data-parallax="-0.14">
-            <span class="about-stat-num">seit&nbsp;<span class="count" data-count="2009" data-plain="1">0</span></span>
-            <span class="about-stat-label">zertifizierter Fachbetrieb</span>
+          <div class="about-figure about-figure-sub" data-parallax="-0.1">
+            <img src="assets/images/leistung-demontage.jpg" alt="Zerlegte Tanks werden für den Abtransport vorbereitet" width="900" height="675" loading="lazy" />
+          </div>
+          <div class="about-badge">
+            <span class="about-badge-num">seit 2009</span>
+            <span class="about-badge-txt">zertifizierter<br />Fachbetrieb</span>
           </div>
         </div>
 
@@ -176,10 +164,39 @@
           <p>Ob komplette Heizungsanlagen, Heizöltanks, Weintanks oder Wassertanks – wir planen Ihren individuellen Auftrag und garantieren eine zeitnahe und fachgerechte Ausführung. Unser besonderes Augenmerk liegt dabei auf der Vermeidung von Spuren und Schäden.</p>
           <ul class="about-list">
             <li><span aria-hidden="true">✓</span> Zertifizierung nach § 62 AwSV</li>
-            <li><span aria-hidden="true">✓</span> Familienbetrieb in zweiter Hand seit 2022</li>
-            <li><span aria-hidden="true">✓</span> Erfahrung mit Heizöl-, Wein- und Wassertanks sowie kompletten Heizungsanlagen</li>
-            <li><span aria-hidden="true">✓</span> Persönliche Beratung direkt vor Ort</li>
+            <li><span aria-hidden="true">✓</span> Familienbetrieb seit 2022</li>
+            <li><span aria-hidden="true">✓</span> Heizöl-, Wein- &amp; Wassertanks</li>
+            <li><span aria-hidden="true">✓</span> Persönliche Beratung vor Ort</li>
           </ul>
+          <a class="btn btn-primary" href="#kontakt"><span>Lernen Sie uns kennen</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-band" aria-label="Zahlen &amp; Fakten">
+      <div class="container stats-grid" data-reveal-group>
+        <div class="stat" data-reveal-item>
+          <span class="stat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <dt><span class="count" data-count="17">0</span>+</dt>
+          <dd>Jahre Erfahrung</dd>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <dt><span class="count" data-count="50">0</span>&nbsp;km</dt>
+          <dd>Einsatzradius</dd>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <dt>§&nbsp;62</dt>
+          <dd>AwSV zertifiziert</dd>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span>
+          <dt>seit <span class="count" data-count="2022" data-plain="1">0</span></dt>
+          <dd>Familienbetrieb</dd>
         </div>
       </div>
     </section>
@@ -200,37 +217,29 @@
               <span class="card-index">01</span>
             </div>
             <div class="card-body">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13"/><path d="M9 6V4h6v2"/><path d="M8 11h8M8 15h8"/></svg>
-              </div>
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13"/><path d="M9 6V4h6v2"/><path d="M8 11h8M8 15h8"/></svg></div>
               <h3>Heizöltank-Ausbau</h3>
               <p>Wir bauen Ihren Heizöltank professionell aus – von der Restölentnahme über die Reinigung bis zur Demontage. Mit besonderem Augenmerk auf die Vermeidung von Spuren und Schäden an Ihrem Gebäude.</p>
             </div>
           </article>
-
           <article class="card leistung" data-reveal-item>
             <div class="card-media">
               <img src="assets/images/leistung-demontage.jpg" alt="Zerlegte Kunststofftanks werden für den Abtransport vorbereitet" width="900" height="675" loading="lazy" />
               <span class="card-index">02</span>
             </div>
             <div class="card-body">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3Z"/></svg>
-              </div>
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3Z"/></svg></div>
               <h3>Tankdemontage</h3>
               <p>Enge Kellerräume und schwer zugängliche Anlagen sind unser Spezialgebiet. Wir zerlegen Tanks aus Stahl oder Kunststoff passgenau vor Ort – auch dort, wo kein Durchgang für einen ganzen Tank bleibt.</p>
             </div>
           </article>
-
           <article class="card leistung" data-reveal-item>
             <div class="card-media">
               <img src="assets/images/leistung-entsorgung.jpg" alt="Sauber geräumter und besenrein übergebener Kellerraum nach dem Tankausbau" width="900" height="675" loading="lazy" />
               <span class="card-index">03</span>
             </div>
             <div class="card-body">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a9 9 0 1 0-1.5 5"/><path d="M21 4v4h-4"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
+              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a9 9 0 1 0-1.5 5"/><path d="M21 4v4h-4"/><path d="m9 12 2 2 4-4"/></svg></div>
               <h3>Fachgerechte Entsorgung</h3>
               <p>Tank und Material entsorgen wir fach- und umweltgerecht. Nach Abschluss erhalten Sie Ihre vereinbarte Rechnung und den dazugehörigen Entsorgungsnachweis – für Ihre Unterlagen und volle Sicherheit.</p>
             </div>
@@ -239,83 +248,122 @@
       </div>
     </section>
 
-    <!-- ============ WARUM WIR (dark) ============ -->
+    <!-- ============ PROJEKTE / REFERENZEN ============ -->
+    <section class="section section-projekte" id="projekte">
+      <div class="container">
+        <header class="section-head center" data-reveal>
+          <p class="eyebrow">Referenzen</p>
+          <h2>Einblicke in unsere Arbeit</h2>
+          <p class="section-intro">Echte Projekte aus der Region – vom Stahltank im Heizraum bis zum erdverlegten Tank im Garten.</p>
+        </header>
+
+        <div class="gallery" data-reveal-group>
+          <figure class="gal-item gal-feature" data-reveal-item>
+            <img src="assets/images/hero-tankausbau.jpg" alt="Ausbau eines großen Stahl-Heizöltanks in einem Kellerraum" width="1680" height="1050" loading="lazy" />
+            <figcaption><span class="gal-tag">Heizöltank-Ausbau</span><span class="gal-title">Stahltank im Heizraum</span></figcaption>
+          </figure>
+          <figure class="gal-item" data-reveal-item>
+            <img src="assets/images/leistung-ausbau.jpg" alt="Kunststoff-Heizöltanks vor dem Ausbau" width="900" height="675" loading="lazy" />
+            <figcaption><span class="gal-tag">Heizöltanks</span><span class="gal-title">Kunststoff-Batterietank</span></figcaption>
+          </figure>
+          <figure class="gal-item" data-reveal-item>
+            <img src="assets/images/leistung-demontage.jpg" alt="Zerlegte Kunststofftanks bereit zum Abtransport" width="900" height="675" loading="lazy" />
+            <figcaption><span class="gal-tag">Demontage</span><span class="gal-title">Tank passgenau zerlegt</span></figcaption>
+          </figure>
+          <figure class="gal-item" data-reveal-item>
+            <img src="assets/images/galerie-boiler.jpg" alt="Heizraum mit Rohrleitungen während des Rückbaus" width="780" height="620" loading="lazy" />
+            <figcaption><span class="gal-tag">Heizungsanlage</span><span class="gal-title">Rückbau im Heizraum</span></figcaption>
+          </figure>
+          <figure class="gal-item" data-reveal-item>
+            <img src="assets/images/galerie-inside.jpg" alt="Innenansicht eines Tanks während der Reinigung und Kontrolle" width="780" height="620" loading="lazy" />
+            <figcaption><span class="gal-tag">Reinigung</span><span class="gal-title">Innenkontrolle &amp; Reinigung</span></figcaption>
+          </figure>
+          <figure class="gal-item" data-reveal-item>
+            <img src="assets/images/leistung-entsorgung.jpg" alt="Besenrein übergebener Kellerraum nach dem Tankausbau" width="900" height="675" loading="lazy" />
+            <figcaption><span class="gal-tag">Übergabe</span><span class="gal-title">Besenreiner Kellerraum</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WARUM WIR (dark + image) ============ -->
     <section class="section section-why" id="vorteile">
       <span class="why-glow" aria-hidden="true"></span>
-      <div class="container">
-        <header class="section-head" data-reveal>
+      <div class="container why-grid">
+        <div class="why-media" data-reveal>
+          <div class="why-image" data-parallax="0.08">
+            <img src="assets/images/why-work.jpg" alt="Ausbau eines erdverlegten Heizöltanks im Außenbereich" width="1000" height="1180" loading="lazy" />
+          </div>
+          <div class="why-media-badge">
+            <span class="why-media-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span>
+            <span>Sauber &amp; sorgfältig – <strong>ohne Spuren</strong></span>
+          </div>
+        </div>
+
+        <div class="why-copy" data-reveal>
           <p class="eyebrow">Warum Paul Demand Tankservice?</p>
           <h2>Worauf Sie sich bei uns verlassen können</h2>
           <p class="section-intro">Vier Dinge, die Sie bei uns immer bekommen – von der ersten Anfrage bis zur Übergabe.</p>
-        </header>
 
-        <div class="cards cards-4 benefits" data-reveal-group>
-          <div class="benefit" data-reveal-item>
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="why-list" data-reveal-group>
+            <div class="why-item" data-reveal-item>
+              <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div><h3>Persönliche Beratung</h3><p>Direkt mit dem Fachmann – vor Ort und auf Augenhöhe.</p></div>
             </div>
-            <h3>Persönliche Beratung</h3>
-            <p>Sie sprechen direkt mit dem Fachmann – vor Ort und auf Augenhöhe, ohne Callcenter dazwischen.</p>
-          </div>
-          <div class="benefit" data-reveal-item>
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6V11Z"/><path d="M15 7H9v14h6V7Z"/><path d="M21 3h-6v18h6V3Z"/></svg>
+            <div class="why-item" data-reveal-item>
+              <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6V11Z"/><path d="M15 7H9v14h6V7Z"/><path d="M21 3h-6v18h6V3Z"/></svg></div>
+              <div><h3>Sorgfältige Planung</h3><p>Individuell geplant – passend zu Ihren Gegebenheiten.</p></div>
             </div>
-            <h3>Sorgfältige Planung</h3>
-            <p>Jeder Auftrag wird individuell geplant – passend zu den Gegebenheiten vor Ort und Ihrem Zeitrahmen.</p>
-          </div>
-          <div class="benefit" data-reveal-item>
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="why-item" data-reveal-item>
+              <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div><h3>Transparente Kosten</h3><p>Keine versteckten Kosten – alles vorab abgesprochen.</p></div>
             </div>
-            <h3>Transparente Kosten</h3>
-            <p>Keine versteckten Kosten: Alle Kosten und mögliche Zusatzkosten werden vorab mit Ihnen abgesprochen.</p>
-          </div>
-          <div class="benefit" data-reveal-item>
-            <div class="benefit-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div class="why-item" data-reveal-item>
+              <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <div><h3>Fachgerechte Ausführung</h3><p>Zertifiziert nach § 62 AwSV – inkl. Entsorgungsnachweis.</p></div>
             </div>
-            <h3>Fachgerechte Ausführung</h3>
-            <p>Zertifizierte Arbeit nach § 62 AwSV – inklusive Entsorgungsnachweis nach Abschluss des Auftrags.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABLAUF ============ -->
+    <!-- ============ ABLAUF / PROZESS ============ -->
     <section class="section section-ablauf" id="ablauf">
       <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="eyebrow">Ablauf</p>
-          <h2>So einfach funktioniert die Zusammenarbeit</h2>
-          <p class="section-intro">In vier klaren Schritten vom ersten Kontakt bis zum fertig ausgebauten Tank.</p>
-        </header>
+        <div class="ablauf-head" data-reveal>
+          <div>
+            <p class="eyebrow">Ablauf</p>
+            <h2>So einfach funktioniert die Zusammenarbeit</h2>
+          </div>
+          <a class="btn btn-ghost" href="#kontakt">Jetzt starten</a>
+        </div>
 
-        <ol class="steps" data-reveal-group>
-          <li class="step" data-reveal-item>
-            <span class="step-line" aria-hidden="true"></span>
-            <span class="step-num">1</span>
+        <div class="process" data-reveal-group>
+          <div class="proc-step" data-reveal-item>
+            <span class="proc-watermark" aria-hidden="true">01</span>
+            <div class="proc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
             <h3>Anfrage stellen</h3>
-            <p>Schildern Sie uns Ihr Vorhaben – über das Formular oder telefonisch. Wir melden uns zeitnah bei Ihnen zurück.</p>
-          </li>
-          <li class="step" data-reveal-item>
-            <span class="step-line" aria-hidden="true"></span>
-            <span class="step-num">2</span>
-            <h3>Vor-Ort-Termin vereinbaren</h3>
-            <p>Wir sehen uns die Gegebenheiten vor Ort an, klären Ihre Fragen und beraten Sie persönlich.</p>
-          </li>
-          <li class="step" data-reveal-item>
-            <span class="step-line" aria-hidden="true"></span>
-            <span class="step-num">3</span>
-            <h3>Individuelles Angebot erhalten</h3>
-            <p>Sie bekommen ein transparentes Angebot – alle Kosten und mögliche Zusatzkosten vorab abgesprochen.</p>
-          </li>
-          <li class="step" data-reveal-item>
-            <span class="step-num">4</span>
-            <h3>Auftrag durchführen lassen</h3>
-            <p>Wir führen den Ausbau fachgerecht aus. Zum Abschluss erhalten Sie Rechnung und Entsorgungsnachweis.</p>
-          </li>
-        </ol>
+            <p>Schildern Sie uns Ihr Vorhaben – per Formular oder telefonisch. Wir melden uns zeitnah zurück.</p>
+          </div>
+          <div class="proc-step" data-reveal-item>
+            <span class="proc-watermark" aria-hidden="true">02</span>
+            <div class="proc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <h3>Vor-Ort-Termin</h3>
+            <p>Wir sehen uns die Gegebenheiten an, klären Ihre Fragen und beraten Sie persönlich.</p>
+          </div>
+          <div class="proc-step" data-reveal-item>
+            <span class="proc-watermark" aria-hidden="true">03</span>
+            <div class="proc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+            <h3>Individuelles Angebot</h3>
+            <p>Sie erhalten ein transparentes Angebot – alle Kosten vorab abgesprochen.</p>
+          </div>
+          <div class="proc-step" data-reveal-item>
+            <span class="proc-watermark" aria-hidden="true">04</span>
+            <div class="proc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3Z"/></svg></div>
+            <h3>Ausbau durchführen</h3>
+            <p>Wir führen den Ausbau fachgerecht aus. Zum Abschluss: Rechnung &amp; Entsorgungsnachweis.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -331,16 +379,13 @@
             <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </a>
         </div>
-
         <div class="area-visual" data-reveal aria-hidden="true">
           <div class="radius-map">
             <span class="radius-ring ring-1"></span>
             <span class="radius-ring ring-2"></span>
             <span class="radius-ring ring-3"></span>
             <span class="radius-pulse"></span>
-            <span class="radius-center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
+            <span class="radius-center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <span class="radius-label">Landau i. d. Pfalz</span>
             <span class="radius-badge">Umkreis 50&nbsp;km</span>
           </div>
@@ -351,38 +396,47 @@
     <!-- ============ FAQ ============ -->
     <section class="section section-faq" id="faq">
       <div class="container faq-grid">
-        <div class="faq-head" data-reveal>
-          <p class="eyebrow">Häufige Fragen</p>
-          <h2>Gut zu wissen vor Ihrem Tankausbau</h2>
-          <p class="section-intro">Die wichtigsten Fragen rund um Ablauf, Kosten und Entsorgung – kurz beantwortet. Ihre Frage ist nicht dabei? Schreiben Sie uns einfach.</p>
-          <a class="btn btn-ghost" href="#kontakt">Frage stellen</a>
+        <div class="faq-media" data-reveal>
+          <div class="faq-image" data-parallax="0.07">
+            <img src="assets/images/faq.jpg" alt="Heizöltanks aus Kunststoff in einem Kellerraum" width="1000" height="1180" loading="lazy" />
+          </div>
+          <div class="faq-cta">
+            <p>Ihre Frage ist nicht dabei?</p>
+            <a class="btn btn-primary btn-sm" href="#kontakt">Frage stellen</a>
+          </div>
         </div>
 
-        <div class="faq-list" data-reveal>
-          <details class="faq-item">
-            <summary>Was kostet der Ausbau eines Heizöltanks?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>Die Kosten hängen von Art, Größe und Zugänglichkeit Ihres Tanks ab. Nach einem unverbindlichen Vor-Ort-Termin erhalten Sie ein transparentes Angebot – alle Kosten und mögliche Zusatzkosten werden vorab mit Ihnen abgesprochen. Versteckte Kosten gibt es bei uns nicht.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Welche Tanks bauen Sie aus?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>Wir arbeiten mit Heizöltanks aus Stahl und Kunststoff, mit Wein- und Wassertanks sowie mit kompletten Heizungsanlagen. Auch enge Kellerräume und schwer zugängliche Anlagen sind kein Problem – bei Bedarf zerlegen wir den Tank passgenau vor Ort.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Muss der Tank vor dem Ausbau leer sein?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>Nicht zwingend. Zum Ausbau gehören auch die fachgerechte Entnahme von Restöl und die Reinigung des Tanks. Wir kümmern uns um den gesamten Ablauf, damit für Sie kein Aufwand bleibt.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Erhalte ich einen Nachweis über die Entsorgung?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>Ja. Nach Abschluss der Arbeiten erhalten Sie Ihre vereinbarte Rechnung sowie den dazugehörigen Entsorgungsnachweis für Ihre Unterlagen.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>In welchem Gebiet sind Sie tätig?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>Unser Einsatzgebiet umfasst einen Umkreis von rund 50&nbsp;km um Landau in der Pfalz. Ob Ihr Standort dazugehört, sagen wir Ihnen gern auf Anfrage.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Wie läuft die Zusammenarbeit ab?<span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>In vier Schritten: Sie stellen eine Anfrage, wir vereinbaren einen Vor-Ort-Termin, Sie erhalten ein individuelles Angebot und wir führen den Ausbau fachgerecht durch – sauber und mit besonderem Augenmerk auf die Vermeidung von Spuren und Schäden.</p></div>
-          </details>
+        <div class="faq-main" data-reveal>
+          <p class="eyebrow">Häufige Fragen</p>
+          <h2>Gut zu wissen vor Ihrem Tankausbau</h2>
+          <p class="section-intro">Die wichtigsten Fragen rund um Ablauf, Kosten und Entsorgung – kurz beantwortet.</p>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Was kostet der Ausbau eines Heizöltanks?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>Die Kosten hängen von Art, Größe und Zugänglichkeit Ihres Tanks ab. Nach einem unverbindlichen Vor-Ort-Termin erhalten Sie ein transparentes Angebot – alle Kosten und mögliche Zusatzkosten werden vorab mit Ihnen abgesprochen. Versteckte Kosten gibt es bei uns nicht.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Welche Tanks bauen Sie aus?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>Wir arbeiten mit Heizöltanks aus Stahl und Kunststoff, mit Wein- und Wassertanks sowie mit kompletten Heizungsanlagen. Auch enge Kellerräume und schwer zugängliche Anlagen sind kein Problem – bei Bedarf zerlegen wir den Tank passgenau vor Ort.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Muss der Tank vor dem Ausbau leer sein?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>Nicht zwingend. Zum Ausbau gehören auch die fachgerechte Entnahme von Restöl und die Reinigung des Tanks. Wir kümmern uns um den gesamten Ablauf, damit für Sie kein Aufwand bleibt.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Erhalte ich einen Nachweis über die Entsorgung?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>Ja. Nach Abschluss der Arbeiten erhalten Sie Ihre vereinbarte Rechnung sowie den dazugehörigen Entsorgungsnachweis für Ihre Unterlagen.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>In welchem Gebiet sind Sie tätig?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>Unser Einsatzgebiet umfasst einen Umkreis von rund 50&nbsp;km um Landau in der Pfalz. Ob Ihr Standort dazugehört, sagen wir Ihnen gern auf Anfrage.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary>Wie läuft die Zusammenarbeit ab?<span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-a"><p>In vier Schritten: Sie stellen eine Anfrage, wir vereinbaren einen Vor-Ort-Termin, Sie erhalten ein individuelles Angebot und wir führen den Ausbau fachgerecht durch – sauber und mit besonderem Augenmerk auf die Vermeidung von Spuren und Schäden.</p></div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
@@ -397,31 +451,16 @@
 
           <ul class="contact-cards">
             <li class="contact-c">
-              <span class="contact-c-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-              </span>
-              <span class="contact-c-body">
-                <span class="contact-c-label">Telefon / Mobil</span>
-                <a class="contact-c-value" href="tel:+634898488744">+63&nbsp;48&nbsp;984&nbsp;8744</a>
-              </span>
+              <span class="contact-c-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+              <span class="contact-c-body"><span class="contact-c-label">Telefon / Mobil</span><a class="contact-c-value" href="tel:+634898488744">+63&nbsp;48&nbsp;984&nbsp;8744</a></span>
             </li>
             <li class="contact-c">
-              <span class="contact-c-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </span>
-              <span class="contact-c-body">
-                <span class="contact-c-label">E-Mail</span>
-                <a class="contact-c-value" href="mailto:markusboellinger@web.de">markusboellinger@web.de</a>
-              </span>
+              <span class="contact-c-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+              <span class="contact-c-body"><span class="contact-c-label">E-Mail</span><a class="contact-c-value" href="mailto:markusboellinger@web.de">markusboellinger@web.de</a></span>
             </li>
             <li class="contact-c">
-              <span class="contact-c-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <span class="contact-c-body">
-                <span class="contact-c-label">Adresse</span>
-                <a class="contact-c-value" href="https://www.google.com/maps/search/?api=1&amp;query=Im+Schlangengarten+76877+Offenbach+an+der+Queich" target="_blank" rel="noopener">Im Schlangengarten, 76877 Offenbach an der Queich</a>
-              </span>
+              <span class="contact-c-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span class="contact-c-body"><span class="contact-c-label">Adresse</span><a class="contact-c-value" href="https://www.google.com/maps/search/?api=1&amp;query=Im+Schlangengarten+76877+Offenbach+an+der+Queich" target="_blank" rel="noopener">Im Schlangengarten, 76877 Offenbach an der Queich</a></span>
             </li>
           </ul>
         </div>
@@ -429,12 +468,10 @@
         <div class="contact-card" data-reveal>
           <form class="contact-form" id="anfrage-form" novalidate>
             <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-
             <div class="form-row">
               <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="name" name="name" autocomplete="name" required />
             </div>
-
             <div class="form-grid-2">
               <div class="form-row">
                 <label for="email">E-Mail <span class="req" aria-hidden="true">*</span></label>
@@ -445,22 +482,18 @@
                 <input type="tel" id="telefon" name="telefon" autocomplete="tel" />
               </div>
             </div>
-
             <div class="form-row">
               <label for="ort">Ort / PLZ des Tankstandorts</label>
               <input type="text" id="ort" name="ort" autocomplete="address-level2" />
             </div>
-
             <div class="form-row">
               <label for="nachricht">Ihr Vorhaben <span class="req" aria-hidden="true">*</span></label>
               <textarea id="nachricht" name="nachricht" rows="4" placeholder="Beschreiben Sie kurz Ihren Tank und Ihr Anliegen – z. B. Art und Größe des Tanks, Zugang zum Keller, gewünschter Zeitraum." required></textarea>
             </div>
-
             <div class="form-check">
               <input type="checkbox" id="einwilligung" name="einwilligung" required />
               <label for="einwilligung">Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. <span class="req" aria-hidden="true">*</span></label>
             </div>
-
             <button type="submit" class="btn btn-primary btn-block btn-lg">
               <span>Anfrage absenden</span>
               <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
@@ -489,9 +522,9 @@
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="#startseite">Startseite</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#projekte">Projekte</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -501,18 +534,9 @@
       <div class="footer-contact">
         <h4>Kontakt</h4>
         <ul>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-            <a href="tel:+634898488744">+63&nbsp;48&nbsp;984&nbsp;8744</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <a href="mailto:markusboellinger@web.de">markusboellinger@web.de</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Im Schlangengarten,<br />76877 Offenbach an der Queich</span>
-          </li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><a href="tel:+634898488744">+63&nbsp;48&nbsp;984&nbsp;8744</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:markusboellinger@web.de">markusboellinger@web.de</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Im Schlangengarten,<br />76877 Offenbach an der Queich</span></li>
         </ul>
         <a class="btn btn-primary btn-sm" href="#kontakt">Jetzt Anfrage stellen</a>
       </div>
