@@ -387,7 +387,7 @@ p { color: var(--text-muted); }
   .process { grid-template-columns: 1fr 1fr; }
   .proc-step:not(:last-child)::before { display: none; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem 1rem; }
-  .stat:nth-child(2)::after { display: none; }
+  .stat::after { display: none; }
   .about-grid, .why-grid, .contact-grid, .faq-grid, .area-grid { grid-template-columns: 1fr; }
   .about-media { max-width: 520px; }
   .why-list { grid-template-columns: 1fr 1fr; }
@@ -405,9 +405,20 @@ p { color: var(--text-muted); }
   .gallery { grid-template-columns: 1fr 1fr; }
   .gal-feature { grid-column: span 2; grid-row: span 1; }
 }
+/* Compact process cards on phones */
+@media (max-width: 680px) {
+  .process { padding-top: 0; gap: 1rem; }
+  .proc-step { padding: 1.4rem 1.3rem; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "num icon" "title title" "desc desc"; align-items: center; column-gap: 0.75rem; }
+  .proc-num { position: static; grid-area: num; font-size: 2.4rem; }
+  .proc-icon { grid-area: icon; width: 46px; height: 46px; }
+  .proc-step h3 { grid-area: title; margin: 0.7rem 0 0.4rem; }
+  .proc-step p { grid-area: desc; margin-bottom: 0; }
+}
+
 @media (max-width: 580px) {
   :root { --header-h: 64px; }
-  .cards-3, .process, .form-grid-2, .about-list, .why-list, .stats-grid, .gallery, .hero-features { grid-template-columns: 1fr; }
+  .cards-3, .process, .form-grid-2, .about-list, .why-list, .gallery, .hero-features { grid-template-columns: 1fr; }
+  .stats-grid { gap: 1.4rem 1rem; }
   .stat::after { display: none !important; }
   .hero-actions .btn { flex: 1 1 auto; }
   .brand-sub { font-size: 0.6rem; }
