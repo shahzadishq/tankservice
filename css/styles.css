@@ -132,7 +132,7 @@ p { color: var(--text-muted); }
 .header-call-label { font-size: 0.72rem; color: var(--text-muted); }
 .header-call-num { font-family: var(--font-head); font-weight: 700; font-size: 0.98rem; color: var(--anthracite); transition: color 0.2s var(--ease); }
 .header-call:hover .header-call-num { color: var(--green); }
-.nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; background: transparent; border: 0; }
+.nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; margin-left: auto; background: transparent; border: 0; }
 .nav-toggle span { height: 2.5px; width: 100%; background: var(--anthracite); border-radius: 2px; transition: transform 0.25s var(--ease), opacity 0.2s var(--ease); }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
@@ -353,6 +353,7 @@ p { color: var(--text-muted); }
 /* Footer */
 .site-footer { background: var(--anthracite); color: #C3CAC5; position: relative; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 0.8fr 1.2fr; gap: 2.5rem; padding-block: clamp(2.8rem, 5vw, 4rem); }
+.brand-footer .brand-mark { background: #fff; border-radius: 8px; padding: 5px; }
 .brand-footer .brand-name { color: #fff; }
 .brand-footer .brand-name strong { color: #86B06E; }
 .brand-footer .brand-sub { color: #9AA29D; }
