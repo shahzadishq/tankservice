@@ -111,7 +111,7 @@ p { color: var(--text-muted); }
 .site-header.scrolled .header-inner { height: 66px; }
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; flex: none; }
 .brand-mark { flex: none; transition: transform 0.4s var(--ease); }
-.brand:hover .brand-mark { transform: rotate(-4deg) scale(1.05); }
+.brand:hover .brand-mark { transform: scale(1.03); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand-name { font-family: var(--font-head); font-weight: 600; font-size: 1.12rem; color: var(--anthracite); letter-spacing: -0.01em; }
 .brand-name strong { font-weight: 800; color: var(--green); }
