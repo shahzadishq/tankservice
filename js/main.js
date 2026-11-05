@@ -1,5 +1,5 @@
 /* =========================================================
-   Paul Demand Tankservice – Homepage interactions · v2
+   Demand Tankservice – Homepage interactions · v2
    Vanilla UI logic + GSAP/ScrollTrigger/Lenis (progressive).
    Everything degrades gracefully: without the libraries (or
    with reduced motion) all content stays fully visible.

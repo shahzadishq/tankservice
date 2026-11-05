@@ -1,6 +1,6 @@
-# Paul Demand Tankservice – Homepage (Staging)
+# Demand Tankservice – Homepage (Staging)
 
-Statische, responsive deutschsprachige Homepage für **Paul Demand Tankservice**
+Statische, responsive deutschsprachige Homepage für **Demand Tankservice**
 (Heizöltank-Ausbau, Tankdemontage und fachgerechte Entsorgung).
 
 > **Hinweis:** Dies ist eine **Staging-Vorschau** zur Abstimmung mit dem Kunden,
