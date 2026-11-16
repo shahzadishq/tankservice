@@ -53,7 +53,8 @@
   onScroll();
 
   /* ---------- Active nav link ---------- */
-  var navLinks = Array.prototype.slice.call(doc.querySelectorAll(".main-nav a"));
+  // Only top-level links that point to a section on the current page
+  var navLinks = Array.prototype.slice.call(doc.querySelectorAll('.main-nav > ul > li > a[href^="#"]'));
   var linkById = {};
   navLinks.forEach(function (link) {
     var id = (link.getAttribute("href") || "").replace("#", "");
@@ -270,6 +271,15 @@
   }
 
   if (form) {
+    // Preselect the service when arriving from a service page (?leistung=…)
+    var leistungSelect = form.querySelector("#leistung");
+    if (leistungSelect && window.URLSearchParams) {
+      var wanted = new URLSearchParams(window.location.search).get("leistung");
+      if (wanted && leistungSelect.querySelector('option[value="' + wanted.replace(/[^a-z0-9-]/gi, "") + '"]')) {
+        leistungSelect.value = wanted;
+      }
+    }
+
     var requiredFields = Array.prototype.slice.call(form.querySelectorAll("[required]"));
     requiredFields.forEach(function (field) {
       field.addEventListener("input", function () {

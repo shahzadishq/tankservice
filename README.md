@@ -4,8 +4,8 @@ Statische, responsive deutschsprachige Homepage für **Demand Tankservice**
 (Heizöltank-Ausbau, Tankdemontage und fachgerechte Entsorgung).
 
 > **Hinweis:** Dies ist eine **Staging-Vorschau** zur Abstimmung mit dem Kunden,
-> noch nicht die finale Produktivversion. Es wurde ausschließlich die Startseite
-> umgesetzt (keine Unterseiten, kein Impressum, keine Datenschutzerklärung – siehe *Scope*).
+> noch nicht die finale Produktivversion. Umgesetzt sind die Startseite, vier
+> Leistungs-Unterseiten, Kontakt und Impressum (Datenschutzerklärung fehlt noch).
 
 ## Stack
 
@@ -24,7 +24,13 @@ Keine Frameworks, keine Abhängigkeiten, keine Tracker.
 
 ```
 .
-├── index.html                 # komplette Startseite
+├── index.html                 # Startseite
+├── heizoeltank-ausbau.html    # Leistung 01
+├── tankdemontage.html         # Leistung 02
+├── entsorgung.html            # Leistung 03
+├── erdtankverfuellung.html    # Leistung 04
+├── kontakt.html               # Kontakt (Formular mit Leistungsauswahl, ?leistung=<slug>)
+├── impressum.html             # Impressum (Platzhalter gelb markiert)
 ├── css/styles.css             # Design-System & Styles
 ├── js/main.js                 # Interaktionen
 ├── assets/
@@ -66,6 +72,19 @@ Einsatzgebiet (50-km-Radius) · FAQ (Akkordeon) · Kontakt (Kontaktdaten + Formu
 
 Alle Navigationspunkte und CTA-Buttons scrollen per Smooth-Scroll (Lenis) zu den
 entsprechenden Abschnitten derselben Seite. Es gibt keine toten Links.
+
+## Unterseiten
+
+Alle Unterseiten nutzen dasselbe Design-System (`css/styles.css`) und dasselbe Script.
+Header (mit Leistungen-Dropdown) und Footer sind auf allen Seiten identisch –
+Änderungen daran bitte in **allen** HTML-Dateien nachziehen.
+
+- **Leistungsseiten:** Seitenkopf mit Breadcrumb · Einleitung (Bild + Checkliste) ·
+  Leistungsumfang (6 Karten) · Zahlen · Ablauf · FAQ · weitere Leistungen · CTA.
+  „Angebot anfragen“ verlinkt auf `kontakt.html?leistung=<slug>` und wählt die Leistung im Formular vor.
+- **Kontakt:** Kontaktdaten + Formular · Tipps für die Anfrage · Einsatzgebiet · Leistungen.
+- **Impressum:** Angaben nach § 5 DDG / § 18 Abs. 2 MStV. Fehlende Angaben sind als
+  gelbe `[Platzhalter]` markiert, die Seite steht auf `noindex`.
 
 ## Animation / Technik
 
@@ -110,9 +129,9 @@ für das Web aufbereitet (zugeschnitten, leicht aufgehellt, komprimiert).
       Double-Opt-in/DSGVO-konformer Verarbeitung**.
 - [ ] **Echte Kontaktdaten** ergänzen (Telefon, E-Mail, ggf. Adresse) –
       wurden bewusst **nicht erfunden**.
-- [ ] **Impressum & Datenschutzerklärung** erstellen und verlinken
-      (rechtlich für den Live-Betrieb erforderlich; laut Auftrag für die
-      Staging-Phase ausgeklammert).
+- [ ] **Impressum vervollständigen** (gelbe Platzhalter: Rechtsform, USt-IdNr.,
+      Kammer, Zertifizierungsstelle) und rechtlich prüfen lassen; danach `noindex` entfernen.
+- [ ] **Datenschutzerklärung** erstellen und im Footer sowie an der Formular-Einwilligung verlinken.
 - [ ] Inhalte „Über uns“ durch den Kunden **prüfen und freigeben**.
 - [ ] Domain `demand-tankservice.de` registrieren/verbinden (sofern gewünscht).
 - [ ] Optional: Fotos durch professionelle Aufnahmen ergänzen; `og:image`

@@ -36,15 +36,26 @@
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#startseite">Startseite</a></li>
-          <li><a href="#leistungen">Leistungen</a></li>
+          <li class="has-sub">
+            <a href="#leistungen">Leistungen<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="sub-menu">
+              <ul>
+                <li><a href="heizoeltank-ausbau.html"><span class="sub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13"/><path d="M9 6V4h6v2"/><path d="M8 11h8M8 15h8"/></svg></span>Heizöltank-Ausbau</a></li>
+                <li><a href="tankdemontage.html"><span class="sub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3Z"/></svg></span>Tankdemontage</a></li>
+                <li><a href="entsorgung.html"><span class="sub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a9 9 0 1 0-1.5 5"/><path d="M21 4v4h-4"/><path d="m9 12 2 2 4-4"/></svg></span>Fachgerechte Entsorgung</a></li>
+                <li><a href="erdtankverfuellung.html"><span class="sub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18M3 17.5h18"/></svg></span>Erdtankverfüllung</a></li>
+                <li class="sub-all"><a href="#leistungen">Alle Leistungen im Überblick <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
 
       <div class="header-right">
         <a class="header-call" href="tel:+4915170158805">
-          <span class="header-call-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+          <span class="header-call-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
           <span class="header-call-txt"><span class="header-call-label">Jetzt anrufen</span><span class="header-call-num">+49&nbsp;1517&nbsp;0158805</span></span>
         </a>
         <a class="btn btn-primary header-cta" href="#kontakt">
@@ -61,13 +72,18 @@
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
       <ul>
         <li><a href="#startseite">Startseite</a></li>
-        <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
+        <li><ul class="mobile-sub">
+          <li><a href="heizoeltank-ausbau.html">Heizöltank-Ausbau</a></li>
+          <li><a href="tankdemontage.html">Tankdemontage</a></li>
+          <li><a href="entsorgung.html">Fachgerechte Entsorgung</a></li>
+          <li><a href="erdtankverfuellung.html">Erdtankverfüllung</a></li>
+        </ul></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#projekte">Projekte</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#einsatzgebiet">Einsatzgebiet</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
       <a class="btn btn-primary btn-block" href="#kontakt">Jetzt Anfrage stellen</a>
     </nav>
@@ -154,7 +170,7 @@
           <p>Ob komplette Heizungsanlagen, Heizöltanks, Weintanks oder Wassertanks – wir planen Ihren individuellen Auftrag und garantieren eine zeitnahe und fachgerechte Ausführung. Dabei liegt unser besonderes Augenmerk auf der Vermeidung von Spuren oder Schäden.</p>
           <p>Bei einer Auftragsanfrage machen wir mit Ihnen vor Ort einen Besichtigungstermin aus, um die Gegebenheiten zu sehen. Sollten Sie beim Ortstermin Fragen haben, beraten wir Sie gerne. Bei Auftragserteilung brauchen Sie keine versteckten Kosten zu befürchten, da alle Kosten und eventuelle Zusatzkosten mit Ihnen abgesprochen werden.</p>
           <p>Nach dem Ausbau Ihrer Anlage erhalten Sie Ihre vereinbarte Rechnung und den dazugehörigen Entsorgungsnachweis. Unser Einsatzgebiet ist ein Umkreis von 50&nbsp;km rund um Landau in der Pfalz.</p>
-          <a class="btn btn-primary" href="#kontakt"><span>Lernen Sie uns kennen</span>
+          <a class="btn btn-primary" href="kontakt.html"><span>Lernen Sie uns kennen</span>
             <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </a>
         </div>
@@ -204,8 +220,9 @@
             </div>
             <div class="card-body">
               <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13"/><path d="M9 6V4h6v2"/><path d="M8 11h8M8 15h8"/></svg></div>
-              <h3>Heizöltank-Ausbau</h3>
+              <h3><a class="card-stretch" href="heizoeltank-ausbau.html">Heizöltank-Ausbau</a></h3>
               <p>Wir bauen Ihren Heizöltank professionell aus – von der Restölentnahme über die Reinigung bis zur Demontage. Mit besonderem Augenmerk auf die Vermeidung von Spuren und Schäden an Ihrem Gebäude.</p>
+              <span class="card-more" aria-hidden="true">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
             </div>
           </article>
           <article class="card leistung" data-reveal-item>
@@ -215,8 +232,9 @@
             </div>
             <div class="card-body">
               <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3Z"/></svg></div>
-              <h3>Tankdemontage</h3>
+              <h3><a class="card-stretch" href="tankdemontage.html">Tankdemontage</a></h3>
               <p>Enge Kellerräume und schwer zugängliche Anlagen sind unser Spezialgebiet. Wir zerlegen Tanks aus Stahl oder Kunststoff passgenau vor Ort – auch dort, wo kein Durchgang für einen ganzen Tank bleibt.</p>
+              <span class="card-more" aria-hidden="true">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
             </div>
           </article>
           <article class="card leistung" data-reveal-item>
@@ -226,8 +244,9 @@
             </div>
             <div class="card-body">
               <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a9 9 0 1 0-1.5 5"/><path d="M21 4v4h-4"/><path d="m9 12 2 2 4-4"/></svg></div>
-              <h3>Fachgerechte Entsorgung</h3>
+              <h3><a class="card-stretch" href="entsorgung.html">Fachgerechte Entsorgung</a></h3>
               <p>Tank und Material entsorgen wir fach- und umweltgerecht. Nach Abschluss erhalten Sie Ihre vereinbarte Rechnung und den dazugehörigen Entsorgungsnachweis – für Ihre Unterlagen und volle Sicherheit.</p>
+              <span class="card-more" aria-hidden="true">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
             </div>
           </article>
           <article class="card leistung" data-reveal-item>
@@ -237,8 +256,9 @@
             </div>
             <div class="card-body">
               <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18M3 17.5h18"/></svg></div>
-              <h3>Erdtankverfüllung</h3>
+              <h3><a class="card-stretch" href="erdtankverfuellung.html">Erdtankverfüllung</a></h3>
               <p>Erdverlegte Tanks, die nicht ausgebaut werden können, verfüllen wir fachgerecht vor Ort. So wird Ihre stillgelegte Anlage dauerhaft und sicher gesichert – normgerecht und sauber dokumentiert.</p>
+              <span class="card-more" aria-hidden="true">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
             </div>
           </article>
         </div>
@@ -543,12 +563,22 @@
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <h4>Navigation</h4>
         <ul>
+          <li><a href="#startseite">Startseite</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#projekte">Projekte</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Leistungen">
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="heizoeltank-ausbau.html">Heizöltank-Ausbau</a></li>
+          <li><a href="tankdemontage.html">Tankdemontage</a></li>
+          <li><a href="entsorgung.html">Fachgerechte Entsorgung</a></li>
+          <li><a href="erdtankverfuellung.html">Erdtankverfüllung</a></li>
         </ul>
       </nav>
 
@@ -566,7 +596,10 @@
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <p>&copy; <span id="jahr">2026</span> Demand Tankservice. Alle Rechte vorbehalten.</p>
-        <p class="footer-legal-note">Impressum &amp; Datenschutzerklärung folgen zum Launch der Website.</p>
+        <nav class="footer-legal" aria-label="Rechtliches">
+          <a href="kontakt.html">Kontakt</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
       </div>
     </div>
   </footer>
