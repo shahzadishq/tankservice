@@ -84,7 +84,7 @@ p { color: var(--text-muted); }
 .eyebrow::after { content: ""; width: 30px; height: 2px; background: currentColor; border-radius: 2px; display: inline-block; opacity: 0.9; }
 .eyebrow-dot { display: none; }
 .lead { font-size: clamp(1.05rem, 1.6vw, 1.24rem); color: var(--text-muted); }
-.section-head { max-width: 700px; margin-bottom: clamp(2.2rem, 4vw, 3.4rem); }
+.section-head { max-width: 720px; margin-bottom: clamp(2.2rem, 4vw, 3.4rem); }
 .section-head.center { margin-inline: auto; text-align: center; }
 .section-intro { margin-top: 0.9rem; font-size: 1.08rem; }
 
@@ -146,7 +146,7 @@ p { color: var(--text-muted); }
 
 /* HERO (full-bg scene, above the fold) */
 .hero { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - var(--header-h)); }
-.hero-bg { background-color: #e9ece6; background-image: url("../assets/images/hero-tankausbau.jpg"); background-size: cover; background-position: 70% center; background-repeat: no-repeat; }
+.hero-bg { background-color: #e9ece6; background-image: url("../assets/images/galerie-keller1.jpg"); background-size: cover; background-position: 70% center; background-repeat: no-repeat; }
 .hero-scrim { position: absolute; inset: 0; z-index: 0; background:
   linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.94) 32%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.08) 72%, rgba(255,255,255,0) 86%),
   linear-gradient(0deg, rgba(255,255,255,0.85), rgba(255,255,255,0) 32%); }
@@ -178,7 +178,8 @@ p { color: var(--text-muted); }
 .about-figure { position: absolute; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--grey-100); will-change: transform; }
 .about-figure img { width: 100%; height: 100%; object-fit: cover; }
 .about-figure-main { top: 0; left: 0; width: 88%; height: 89%; }
-.about-figure-sub { right: 0; bottom: 0; width: 62%; height: 62%; border: solid #fff; border-width: 30px 0px 0px 30px; }
+.about-figure-sub { right: 0; bottom: 0; width: 62%; height: 62%; border: 8px solid #fff; box-sizing: border-box; }
+.about-figure-sub img { border-radius: calc(var(--radius) - 8px); object-position: 60% center; }
 .about-badge { position: absolute; top: 3%; right: 0; z-index: 3; display: inline-flex; align-items: center; gap: 0.7rem; background: var(--anthracite); color: #fff; border-radius: var(--radius); padding: 0.85rem 1.2rem; box-shadow: var(--shadow-lg); }
 .about-badge-num { font-family: var(--font-head); font-weight: 800; font-size: 2.3rem; line-height: 1; color: var(--green); }
 .about-badge-plus { color: var(--green); }
@@ -398,7 +399,7 @@ p { color: var(--text-muted); }
 
 /* Page hero */
 .page-hero { position: relative; overflow: hidden; background: #e9ece6; padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 4.8rem); }
-.page-hero-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-hero-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
 .page-hero .hero-scrim { z-index: 1; }
 .page-hero-inner { position: relative; z-index: 2; }
 .page-hero-copy { max-width: 36rem; }
@@ -608,3 +609,8 @@ p { color: var(--text-muted); }
   .anim-ready [data-reveal], .anim-ready [data-reveal-item], .anim-ready [data-hero] { opacity: 1 !important; transform: none !important; }
   .marquee-track { animation: none; }
 }
+
+/* Datenschutz – lists & spacing inside legal text */
+.legal-list { margin: 0.4rem 0 0.9rem; padding-left: 1.2rem; list-style: disc; display: grid; gap: 0.35rem; }
+.legal-list li::marker { color: var(--green); }
+.legal-dl-spaced, .legal-spaced { margin-top: 0.9rem; }
