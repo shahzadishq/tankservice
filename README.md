@@ -15,7 +15,7 @@ voll portabel und leicht zu übergeben:
 - **HTML5** – semantisch, barrierearm (`index.html`)
 - **CSS3** – eigenes Design-System mit Design-Tokens (`css/styles.css`)
 - **Vanilla JavaScript** – Mobile-Navigation, Sticky-Header, Smooth-Scroll,
-  aktive Navigationshervorhebung, Scroll-Reveal, Formular-Validierung (`js/main.js`)
+  aktive Navigationshervorhebung, Scroll-Reveal, Anfrage-Funnel (`js/main.js`)
 - **Google Fonts** – Manrope (Überschriften) & Inter (Fließtext, Buttons, Navigation)
 
 Keine Frameworks, keine Abhängigkeiten, keine Tracker.
@@ -29,7 +29,7 @@ Keine Frameworks, keine Abhängigkeiten, keine Tracker.
 ├── tankdemontage.html         # Leistung 02
 ├── entsorgung.html            # Leistung 03
 ├── erdtankverfuellung.html    # Leistung 04
-├── kontakt.html               # Kontakt (Formular mit Leistungsauswahl, ?leistung=<slug>)
+├── kontakt.html               # Kontaktformular + Kontaktdaten
 ├── impressum.html             # Impressum (Platzhalter gelb markiert)
 ├── css/styles.css             # Design-System & Styles
 ├── js/main.js                 # Interaktionen
@@ -68,7 +68,7 @@ nutzt die Markenschrift Manrope/Inter.
 
 Header (Sticky) · Hero (mehrschichtige Bildkomposition) · Über uns · Leistungen
 (3 Karten) · Warum wir (dunkle Sektion, 4 Vorteile) · Ablauf (4 Schritte) ·
-Einsatzgebiet (50-km-Radius) · FAQ (Akkordeon) · Kontakt (Kontaktdaten + Formular) · Footer.
+Einsatzgebiet (50-km-Radius) · FAQ (Akkordeon) · Kontakt (Anfrage-Funnel + Kontaktdaten) · Footer.
 
 Alle Navigationspunkte und CTA-Buttons scrollen per Smooth-Scroll (Lenis) zu den
 entsprechenden Abschnitten derselben Seite. Es gibt keine toten Links.
@@ -82,9 +82,24 @@ Header (mit Leistungen-Dropdown) und Footer sind auf allen Seiten identisch –
 - **Leistungsseiten:** Seitenkopf mit Breadcrumb · Einleitung (Bild + Checkliste) ·
   Leistungsumfang (6 Karten) · Zahlen · Ablauf · FAQ · weitere Leistungen · CTA.
   „Angebot anfragen“ verlinkt auf `kontakt.html?leistung=<slug>` und wählt die Leistung im Formular vor.
-- **Kontakt:** Kontaktdaten + Formular · Tipps für die Anfrage · Einsatzgebiet · Leistungen.
+- **Kontakt:** Einseitiges Kontaktformular neben den Kontaktdaten · Tipps für die Anfrage · Einsatzgebiet · Leistungen.
 - **Impressum:** Angaben nach § 5 DDG / § 18 Abs. 2 MStV. Fehlende Angaben sind als
   gelbe `[Platzhalter]` markiert, die Seite steht auf `noindex`.
+
+## Anfrage-Funnel und Kontaktformular
+
+Der mehrstufige Anfrage-Funnel bleibt auf `index.html` (#kontakt) und umfasst 7 Schritte mit Fortschrittsbalken. Auf `kontakt.html` befindet sich stattdessen ein einseitiges Kontaktformular:
+
+1. Leistung · 2. Tankart · 3. Größe · 4. Standort des Tanks · 5. Zeitraum · 6. PLZ/Ort · 7. Name, E-Mail, Telefon (+ optionale Nachricht, DSGVO-Einwilligung)
+
+- Auswahlkarten springen nach dem Klick automatisch weiter; „Zurück“ und „Weiter“ sind immer möglich.
+- Leistungsseiten verlinken auf `kontakt.html?leistung=<slug>`; die gewünschte Leistung wird im Kontaktformular vorausgewählt.
+- Tastatur- und Screenreader-tauglich (echte Radio-Buttons, `fieldset`/`legend`, Fokus-Management), Honeypot gegen Spam.
+- Am Ende: Danke-Seite mit Zusammenfassung der Antworten.
+- **Fragen/Optionen ändern:** Markup in `index.html` (`<fieldset class="funnel-step">`);
+  Styles am Ende von `css/styles.css`, Logik in `js/main.js` („Anfrage-Funnel“).
+  Bei neuen/entfernten Schritten funktioniert der Fortschrittsbalken automatisch.
+- **Versand:** Der Homepage-Funnel zeigt ohne konfigurierten Endpoint eine Vorschau-Bestätigung. Das Kontaktformular auf `kontakt.html` öffnet eine vorbereitete E-Mail an `info@demand-tankservice.de`; ein serverseitiger Formularversand ist nicht eingerichtet.
 
 ## Animation / Technik
 
@@ -122,11 +137,7 @@ für das Web aufbereitet (zugeschnitten, leicht aufgehellt, komprimiert).
 
 ## Offene Punkte vor dem Produktiv-Launch
 
-- [ ] **Kontaktformular an ein Backend anbinden.** Aktuell nur Frontend:
-      Pflichtfeld-Validierung läuft, es wird **noch nichts versendet**
-      (Erfolgsmeldung ist simuliert). Benötigt wird ein Mail-/Form-Handler
-      (z. B. Formspree/Netlify Forms oder ein serverseitiges Skript) **inkl.
-      Double-Opt-in/DSGVO-konformer Verarbeitung**.
+- [ ] **Homepage-Funnel an ein Backend anbinden** (`data-endpoint` am Formular). Aktuell wird ohne Endpoint nur eine Vorschau-Bestätigung angezeigt. Für serverseitigen Formularversand ist ein Mail-/Form-Handler nötig.
 - [ ] **Echte Kontaktdaten** ergänzen (Telefon, E-Mail, ggf. Adresse) –
       wurden bewusst **nicht erfunden**.
 - [ ] **Impressum vervollständigen** (gelbe Platzhalter: Rechtsform, USt-IdNr.,

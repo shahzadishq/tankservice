@@ -249,63 +249,210 @@
     }
   }
 
-  /* ---------- Contact form (frontend only) ----------
-     Staging: validates and shows a confirmation, but does
-     NOT send anything yet — a mail/form backend must be
-     connected before launch (see README).
+  /* ---------- Anfrage-Funnel (mehrstufiges Formular) ----------
+     - Auswahlkarten gehen nach dem Klick automatisch zum nächsten Schritt
+     - ?leistung=<slug> (von den Leistungsseiten) wählt Schritt 1 vor
+     - Versand: Endpoint in  <form id="funnel-form" data-endpoint="…">  eintragen
+       (z. B. Formspree). Ohne Endpoint wird nur eine Vorschau-Bestätigung gezeigt.
   --------------------------------------------------------- */
-  var form = doc.getElementById("anfrage-form");
-  var status = doc.getElementById("form-status");
-
-  function showStatus(msg, type) {
-    if (!status) return;
-    status.textContent = msg;
-    status.className = "form-status " + type;
-    status.hidden = false;
+  var contactForm = doc.getElementById("kontakt-form");
+  if (contactForm) {
+    if (window.URLSearchParams && contactForm.elements.leistung) {
+      var requestedService = new URLSearchParams(window.location.search).get("leistung");
+      if (requestedService) contactForm.elements.leistung.value = requestedService;
+    }
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      var fields = contactForm.elements;
+      if (fields.website && fields.website.value.trim()) return;
+      var values = {
+        name: fields.name.value.trim(),
+        email: fields.email.value.trim(),
+        telefon: fields.telefon.value.trim(),
+        leistung: fields.leistung.value.trim(),
+        ort: fields.ort.value.trim(),
+        nachricht: fields.nachricht.value.trim()
+      };
+      var body = [
+        "Name: " + values.name,
+        "E-Mail: " + values.email,
+        "Telefon: " + (values.telefon || "Nicht angegeben"),
+        "Gewünschte Leistung: " + (values.leistung || "Nicht angegeben"),
+        "Ort / PLZ des Tankstandorts: " + (values.ort || "Nicht angegeben"),
+        "",
+        "Ihr Vorhaben:",
+        values.nachricht
+      ].join("\n");
+      var status = doc.getElementById("kontakt-form-status");
+      status.textContent = "Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Nachricht dort ab.";
+      status.className = "form-status success";
+      status.hidden = false;
+      window.location.href = "mailto:info@demand-tankservice.de?subject=" + encodeURIComponent("Kontaktanfrage über die Website") + "&body=" + encodeURIComponent(body);
+    });
   }
-  function fieldValid(field) {
-    if (field.type === "checkbox") return field.checked;
-    if (!field.value.trim()) return false;
-    if (field.type === "email") return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
-    return true;
-  }
 
-  if (form) {
-    // Preselect the service when arriving from a service page (?leistung=…)
-    var leistungSelect = form.querySelector("#leistung");
-    if (leistungSelect && window.URLSearchParams) {
-      var wanted = new URLSearchParams(window.location.search).get("leistung");
-      if (wanted && leistungSelect.querySelector('option[value="' + wanted.replace(/[^a-z0-9-]/gi, "") + '"]')) {
-        leistungSelect.value = wanted;
+  var funnel = doc.getElementById("funnel-form");
+  if (funnel) {
+    var steps = Array.prototype.slice.call(funnel.querySelectorAll(".funnel-step"));
+    var total = steps.length;
+    var current = 0;
+    var barEl = doc.getElementById("funnel-bar");
+    var fillEl = doc.getElementById("funnel-bar-fill");
+    var labelEl = doc.getElementById("funnel-label");
+    var pctEl = doc.getElementById("funnel-pct");
+    var errEl = doc.getElementById("funnel-error");
+    var backBtn = doc.getElementById("funnel-back");
+    var nextBtn = doc.getElementById("funnel-next");
+    var successEl = doc.getElementById("funnel-success");
+    var autoTimer = null;
+    var sending = false;
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function showErr(msg) { errEl.textContent = msg; errEl.hidden = false; }
+    function clearErr() { errEl.hidden = true; errEl.textContent = ""; }
+    function checkedIn(step) { return step.querySelector('input[type="radio"]:checked'); }
+
+    function render(focus) {
+      steps.forEach(function (st, i) { st.hidden = i !== current; });
+      var pct = Math.round((current / total) * 100);
+      fillEl.style.width = pct + "%";
+      barEl.setAttribute("aria-valuenow", pct);
+      pctEl.innerHTML = pct + "&nbsp;%";
+      labelEl.textContent = "Schritt " + (current + 1) + " von " + total;
+      backBtn.hidden = current === 0;
+      var last = current === total - 1;
+      nextBtn.querySelector("span").textContent = last ? "Anfrage absenden" : "Weiter";
+      clearErr();
+      if (focus) {
+        var q = steps[current].querySelector(".funnel-q");
+        if (q) q.focus({ preventScroll: true });
+        var top = funnel.getBoundingClientRect().top;
+        if (top < 0 || top > window.innerHeight * 0.6) scrollToTarget(funnel.closest(".funnel-card") || funnel);
       }
     }
 
-    var requiredFields = Array.prototype.slice.call(form.querySelectorAll("[required]"));
-    requiredFields.forEach(function (field) {
-      field.addEventListener("input", function () {
-        if (fieldValid(field)) field.removeAttribute("aria-invalid");
-      });
-    });
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var firstInvalid = null;
-      requiredFields.forEach(function (field) {
-        if (!fieldValid(field)) {
-          field.setAttribute("aria-invalid", "true");
-          if (!firstInvalid) firstInvalid = field;
-        } else { field.removeAttribute("aria-invalid"); }
-      });
-      if (firstInvalid) {
-        showStatus("Bitte füllen Sie alle Pflichtfelder korrekt aus.", "error");
-        firstInvalid.focus();
-        return;
+    function validateStep(i) {
+      var st = steps[i];
+      if (st.querySelector('input[type="radio"]')) {
+        if (!checkedIn(st)) { showErr("Bitte wählen Sie eine Option aus."); return false; }
+        return true;
       }
-      showStatus(
-        "Vielen Dank für Ihre Anfrage! Wir melden uns zeitnah bei Ihnen zurück. (Hinweis: Dies ist eine Vorschau – der Formularversand wird vor dem Launch eingerichtet.)",
-        "success"
-      );
-      form.reset();
-      scrollToTarget(status);
+      var bad = null;
+      Array.prototype.forEach.call(st.querySelectorAll("[required]"), function (f) {
+        var ok;
+        if (f.type === "checkbox") ok = f.checked;
+        else if (f.type === "email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim());
+        else if (f.type === "tel") ok = f.value.replace(/\D/g, "").length >= 6;
+        else ok = f.value.trim().length >= 2;
+        if (ok) f.removeAttribute("aria-invalid");
+        else { f.setAttribute("aria-invalid", "true"); if (!bad) bad = f; }
+      });
+      if (bad) {
+        showErr(bad.type === "checkbox" ? "Bitte stimmen Sie der Datenverarbeitung zu." : "Bitte füllen Sie die markierten Felder korrekt aus.");
+        bad.focus();
+        return false;
+      }
+      return true;
+    }
+
+    function goNext() {
+      clearTimeout(autoTimer);
+      if (!validateStep(current)) return;
+      if (current < total - 1) { current++; render(true); }
+      else submitFunnel();
+    }
+    function goBack() {
+      clearTimeout(autoTimer);
+      if (current > 0) { current--; render(true); }
+    }
+
+    // Auswahlkarten: automatisch weiter
+    funnel.addEventListener("change", function (e) {
+      if (e.target.type !== "radio") return;
+      clearErr();
+      clearTimeout(autoTimer);
+      autoTimer = setTimeout(goNext, reduced ? 0 : 350);
     });
+    // Eingabefelder: Markierung entfernen sobald gültig
+    funnel.addEventListener("input", function (e) {
+      if (e.target.getAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid");
+    });
+    backBtn.addEventListener("click", goBack);
+    funnel.addEventListener("submit", function (e) { e.preventDefault(); goNext(); });
+
+    // Vorauswahl aus ?leistung=… → Schritt 1 gewählt, direkt weiter zu Schritt 2
+    if (window.URLSearchParams) {
+      var wanted = new URLSearchParams(window.location.search).get("leistung");
+      if (wanted) {
+        var pre = funnel.querySelector('[data-key="leistung"] input[value="' + wanted.replace(/[^a-z0-9-]/gi, "") + '"]');
+        if (pre) { pre.checked = true; current = 1; }
+      }
+    }
+    render(false);
+
+    function collect() {
+      var data = {};
+      steps.forEach(function (st) {
+        var key = st.getAttribute("data-key");
+        var r = checkedIn(st);
+        if (r) { data[key] = r.value; data[key + "_text"] = r.getAttribute("data-text"); }
+      });
+      ["ort", "name", "email", "telefon", "nachricht", "website"].forEach(function (n) {
+        var f = funnel.elements[n]; if (f) data[n] = f.value.trim();
+      });
+      return data;
+    }
+
+    function showSuccess(data, isPreview) {
+      var title = doc.getElementById("funnel-success-title");
+      var first = (data.name || "").split(" ")[0];
+      if (first) title.textContent = "Vielen Dank, " + first + "!";
+      var rows = [
+        ["Leistung", data.leistung_text], ["Tankart", data.tankart_text], ["Größe", data.groesse_text],
+        ["Standort", data.standort_text], ["Zeitraum", data.zeitraum_text], ["PLZ / Ort", data.ort]
+      ];
+      var ul = doc.getElementById("funnel-summary");
+      ul.innerHTML = "";
+      rows.forEach(function (r) {
+        if (!r[1]) return;
+        var li = doc.createElement("li");
+        var a = doc.createElement("span"); a.textContent = r[0];
+        var b = doc.createElement("span"); b.textContent = r[1];
+        li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+      });
+      doc.getElementById("funnel-preview-note").hidden = !isPreview;
+      funnel.classList.add("is-done");
+      successEl.hidden = false;
+      successEl.focus({ preventScroll: true });
+      scrollToTarget(funnel.closest(".funnel-card") || funnel);
+    }
+
+    function submitFunnel() {
+      if (sending) return;
+      var data = collect();
+      if (data.website) return; // Honeypot: Bot
+      var endpoint = funnel.getAttribute("data-endpoint");
+      if (!endpoint) { showSuccess(data, true); return; }
+      sending = true;
+      nextBtn.disabled = true;
+      nextBtn.querySelector("span").textContent = "Wird gesendet …";
+      data._subject = "Neue Anfrage über die Website – " + (data.leistung_text || "Demand Tankservice");
+      delete data.website;
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        showSuccess(data, false);
+      }).catch(function () {
+        showErr("Die Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 1517 0158805.");
+      }).then(function () {
+        sending = false;
+        nextBtn.disabled = false;
+        nextBtn.querySelector("span").textContent = "Anfrage absenden";
+      });
+    }
   }
 })();
